@@ -29,7 +29,7 @@ import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.target.rc
 
 on early-init
-    mount debugfs debugfs /sys/kernel/debug
+# Removed during droid-hal-device build :    mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
 
 on init
@@ -352,8 +352,8 @@ service msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.
     user root
     group root
 
-service time_daemon /vendor/bin/time_daemon
-    class main
-    user root
-    group root
-    writepid /dev/cpuset/system-background/tasks
+# Guhl service time_daemon /vendor/bin/time_daemon
+# Guhl    class main
+# Guhl    user root
+# Guhl    group root
+# Guhl    writepid /dev/cpuset/system-background/tasks
